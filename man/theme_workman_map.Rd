@@ -9,7 +9,12 @@ theme_workman_map(
   base_family = "Alegreya Sans",
   title_family = "Montserrat",
   subtitle_family = "Open Sans",
-  caption_family = "Inconsolata"
+  caption_family = "Inconsolata",
+  title_size = 3,
+  subtitle_size = 2,
+  caption_size = 0.9,
+  legend_title_size = 1.8,
+  legend_text_size = 1.5
 )
 }
 \arguments{
@@ -22,6 +27,16 @@ theme_workman_map(
 \item{subtitle_family}{Font family for subtitles.}
 
 \item{caption_family}{Font family for captions.}
+
+\item{title_size}{Title font size multiplier relative to base_size.}
+
+\item{subtitle_size}{Subtitle font size multiplier relative to base_size.}
+
+\item{caption_size}{Caption font size multiplier relative to base_size.}
+
+\item{legend_title_size}{Legend title font size multiplier relative to base_size.}
+
+\item{legend_text_size}{Legend text font size multiplier relative to base_size.}
 }
 \description{
 Variant of the workman theme tuned for choropleths and spatial graphics.

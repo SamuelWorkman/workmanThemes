@@ -10,6 +10,14 @@ theme_workman(
   title_family = "Montserrat",
   subtitle_family = "Open Sans",
   caption_family = "Inconsolata",
+  title_size = 3,
+  subtitle_size = 2,
+  caption_size = 0.9,
+  axis_title_size = 1.8,
+  axis_text_size = 1.5,
+  legend_title_size = 1.8,
+  legend_text_size = 1.5,
+  strip_text_size = 1,
   base_line_size = base_size/22,
   base_rect_size = base_size/22
 )
@@ -24,6 +32,22 @@ theme_workman(
 \item{subtitle_family}{Font family for subtitles.}
 
 \item{caption_family}{Font family for captions.}
+
+\item{title_size}{Title font size multiplier relative to base_size.}
+
+\item{subtitle_size}{Subtitle font size multiplier relative to base_size.}
+
+\item{caption_size}{Caption font size multiplier relative to base_size.}
+
+\item{axis_title_size}{Axis title font size multiplier relative to base_size.}
+
+\item{axis_text_size}{Axis text font size multiplier relative to base_size.}
+
+\item{legend_title_size}{Legend title font size multiplier relative to base_size.}
+
+\item{legend_text_size}{Legend text font size multiplier relative to base_size.}
+
+\item{strip_text_size}{Facet strip text font size multiplier relative to base_size.}
 
 \item{base_line_size}{Base line size.}
 

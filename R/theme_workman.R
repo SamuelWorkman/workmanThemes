@@ -171,7 +171,7 @@ theme_workman_map <- function(
   legend_title_size = 1.8,
   legend_text_size = 1.5
 ) {
-  theme_workman(
+theme_workman(
     base_size = base_size,
     base_family = base_family,
     title_family = title_family,
@@ -189,7 +189,10 @@ theme_workman_map <- function(
       axis.ticks = ggplot2::element_blank(),
       panel.grid.major = ggplot2::element_blank(),
       panel.grid.minor = ggplot2::element_blank(),
-      legend.position = "bottom",
+
+      legend.position = "right",
+      legend.direction = "vertical",
+      legend.key.height = grid::unit(2.5, "cm"),
       legend.title = ggplot2::element_text(
         family = base_family,
         size = base_size * legend_title_size,
