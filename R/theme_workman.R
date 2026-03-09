@@ -53,14 +53,14 @@ theme_workman <- function(
       plot.title = ggplot2::element_text(
         family = title_family,
         face = "bold",
-        size = ggplot2::rel(1.45),
+        size = ggplot2::rel(2.0),
         colour = wk_black,
         hjust = 0,
         margin = ggplot2::margin(b = 8)
       ),
       plot.subtitle = ggplot2::element_text(
         family = subtitle_family,
-        size = ggplot2::rel(1.0),
+        size = ggplot2::rel(1.5),
         colour = wk_base_700,
         hjust = 0,
         margin = ggplot2::margin(b = 12)
