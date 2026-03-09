@@ -165,11 +165,11 @@ theme_workman_map <- function(
   title_family = "Montserrat",
   subtitle_family = "Open Sans",
   caption_family = "Inconsolata",
-  title_size = 1.6,
-  subtitle_size = 1.15,
+  title_size = 3.0,
+  subtitle_size = 2.0,
   caption_size = 0.9,
-  legend_title_size = 0.95,
-  legend_text_size = 0.9
+  legend_title_size = 1.8,
+  legend_text_size = 1.5
 ) {
   theme_workman(
     base_size = base_size,
