@@ -1,20 +1,29 @@
 Package: workmanThemes
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Personal ggplot2 Themes and Scales
+Version: 0.2.0
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person(
+      given = "Samuel",
+      family = "Workman",
+      role = c("aut", "cre"),
+      email = "YOUR_EMAIL@example.com"
+    )
+Description: Personal ggplot2 themes, Flexoki-inspired colour scales,
+    Google font helpers, map themes, and label utilities for consistent
+    publication graphics.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.3
-Imports: 
+Imports:
     ggplot2,
     scales,
     showtext,
     sysfonts
-Suggests: 
-    testthat (>= 3.0.0)
+Suggests:
+    testthat (>= 3.0.0),
+    knitr,
+    rmarkdown
 Config/testthat/edition: 3
-URL: https://github.com/SamuelWorkman/workmanThemes
-BugReports: https://github.com/SamuelWorkman/workmanThemes/issues
+URL: https://github.com/YOUR_GITHUB_USERNAME/workmanThemes
+BugReports: https://github.com/YOUR_GITHUB_USERNAME/workmanThemes/issues
