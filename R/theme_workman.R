@@ -53,21 +53,21 @@ theme_workman <- function(
       plot.title = ggplot2::element_text(
         family = title_family,
         face = "bold",
-        size = ggplot2::rel(2.0),
+        size = ggplot2::rel(3.0),
         colour = wk_black,
         hjust = 0,
         margin = ggplot2::margin(b = 8)
       ),
       plot.subtitle = ggplot2::element_text(
         family = subtitle_family,
-        size = ggplot2::rel(1.5),
+        size = ggplot2::rel(2.5),
         colour = wk_base_700,
         hjust = 0,
         margin = ggplot2::margin(b = 12)
       ),
       plot.caption = ggplot2::element_text(
         family = caption_family,
-        size = ggplot2::rel(0.90),
+        size = ggplot2::rel(1.0),
         colour = wk_base_600,
         hjust = 0,
         margin = ggplot2::margin(t = 12)
@@ -75,11 +75,13 @@ theme_workman <- function(
 
       axis.title = ggplot2::element_text(
         family = base_family,
+        size = ggplot2::rel(2.0),
         face = "bold",
         colour = wk_black
       ),
       axis.text = ggplot2::element_text(
         family = base_family,
+        size = ggplot2::rel(1.5),
         colour = wk_base_700
       ),
 
