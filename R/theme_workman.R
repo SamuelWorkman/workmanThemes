@@ -1,169 +1,98 @@
-#' Workman ggplot2 theme
+#' Register Google fonts for workmanThemes
 #'
-#' Clean publication theme with separate fonts for title, subtitle,
-#' body, and caption text.
-#'
-#' @param base_size Base font size.
-#' @param base_family Base body font family.
-#' @param title_family Font family for plot titles.
-#' @param subtitle_family Font family for subtitles.
-#' @param caption_family Font family for captions.
-#' @param base_line_size Base line size.
-#' @param base_rect_size Base rectangle line size.
+#' Downloads and registers Google fonts used by the package.
+#' Run once per machine, then call `showtext::showtext_auto()`.
 #'
 #' @export
-theme_workman <- function(
-  base_size = 12,
-  base_family = "Alegreya Sans",
-  title_family = "Montserrat",
-  subtitle_family = "Open Sans",
-  caption_family = "Inconsolata",
-  base_line_size = base_size / 22,
-  base_rect_size = base_size / 22
-) {
-  ggplot2::theme_minimal(
+register_workman_fonts <- function() {
+  if (!"Open Sans" %in% sysfonts::font_families()) {
+    sysfonts::font_add_google("Open Sans", "Open Sans")
+  }
+
+  if (!"Merriweather" %in% sysfonts::font_families()) {
+    sysfonts::font_add_google("Merriweather", "Merriweather")
+  }
+
+  invisible(TRUE)
+}
+
+#' Activate defaults for workmanThemes
+#'
+#' Registers fonts, enables showtext, and sets the default theme.
+#'
+#' @export
+set_workman_defaults <- function(base_size = 12, base_family = "Open Sans") {
+  register_workman_fonts()
+  showtext::showtext_auto()
+
+  ggplot2::theme_set(theme_workman(
     base_size = base_size,
-    base_family = base_family,
-    base_line_size = base_line_size,
-    base_rect_size = base_rect_size
-  ) %+replace%
+    base_family = base_family
+  ))
+
+  invisible(TRUE)
+}
+
+#' Workman publication theme
+#'
+#' A clean ggplot2 theme for reports, papers, and public-facing policy graphics.
+#'
+#' @param base_size Base font size.
+#' @param base_family Base font family.
+#' @param title_family Font family for titles.
+#'
+#' @export
+theme_workman <- function(base_size = 12,
+                          base_family = "Open Sans",
+                          title_family = "Merriweather") {
+
+  ggplot2::theme_minimal(base_size = base_size, base_family = base_family) %+replace%
     ggplot2::theme(
-      line = ggplot2::element_line(
-        colour = wk_base_500,
-        linewidth = base_line_size,
-        lineend = "butt"
-      ),
-      rect = ggplot2::element_rect(
-        fill = wk_paper,
-        colour = NA,
-        linewidth = base_rect_size
-      ),
-      text = ggplot2::element_text(
-        family = base_family,
-        colour = wk_black
-      ),
-
-      plot.background = ggplot2::element_rect(fill = wk_paper, colour = NA),
-      panel.background = ggplot2::element_rect(fill = wk_paper, colour = NA),
-      panel.border = ggplot2::element_blank(),
-
       plot.title.position = "plot",
       plot.caption.position = "plot",
 
       plot.title = ggplot2::element_text(
         family = title_family,
         face = "bold",
-        size = ggplot2::rel(1.45),
-        colour = wk_black,
+        size = ggplot2::rel(1.35),
         hjust = 0,
         margin = ggplot2::margin(b = 8)
       ),
       plot.subtitle = ggplot2::element_text(
-        family = subtitle_family,
         size = ggplot2::rel(1.0),
-        colour = wk_base_700,
         hjust = 0,
-        margin = ggplot2::margin(b = 12)
+        margin = ggplot2::margin(b = 10)
       ),
       plot.caption = ggplot2::element_text(
-        family = caption_family,
-        size = ggplot2::rel(0.90),
-        colour = wk_base_600,
+        size = ggplot2::rel(0.85),
+        colour = "#4D4D4D",
         hjust = 0,
-        margin = ggplot2::margin(t = 12)
+        margin = ggplot2::margin(t = 10)
       ),
 
       axis.title = ggplot2::element_text(
-        family = base_family,
         face = "bold",
-        colour = wk_black
+        colour = "#222222"
       ),
       axis.text = ggplot2::element_text(
-        family = base_family,
-        colour = wk_base_700
+        colour = "#333333"
       ),
 
-      panel.grid.minor = ggplot2::element_blank(),
       panel.grid.major.x = ggplot2::element_blank(),
-      panel.grid.major.y = ggplot2::element_line(
-        colour = wk_base_150,
-        linewidth = 0.4
-      ),
-
-      axis.line = ggplot2::element_blank(),
-      axis.ticks = ggplot2::element_blank(),
-
-      legend.position = "bottom",
-      legend.direction = "horizontal",
-      legend.background = ggplot2::element_rect(fill = wk_paper, colour = NA),
-      legend.key = ggplot2::element_rect(fill = wk_paper, colour = NA),
-      legend.title = ggplot2::element_text(
-        family = base_family,
-        face = "bold",
-        colour = wk_black
-      ),
-      legend.text = ggplot2::element_text(
-        family = base_family,
-        colour = wk_base_700
-      ),
-
-      strip.background = ggplot2::element_rect(
-        fill = wk_base_50,
-        colour = NA
-      ),
-      strip.text = ggplot2::element_text(
-        family = base_family,
-        face = "bold",
-        colour = wk_black
-      ),
-
-      plot.margin = ggplot2::margin(12, 12, 12, 12)
-    )
-}
-
-#' Workman map theme
-#'
-#' Variant of the workman theme tuned for choropleths and spatial graphics.
-#'
-#' @param base_size Base font size.
-#' @param base_family Base body font family.
-#' @param title_family Font family for plot titles.
-#' @param subtitle_family Font family for subtitles.
-#' @param caption_family Font family for captions.
-#'
-#' @export
-theme_workman_map <- function(
-  base_size = 12,
-  base_family = "Alegreya Sans",
-  title_family = "Montserrat",
-  subtitle_family = "Open Sans",
-  caption_family = "Inconsolata"
-) {
-  theme_workman(
-    base_size = base_size,
-    base_family = base_family,
-    title_family = title_family,
-    subtitle_family = subtitle_family,
-    caption_family = caption_family
-  ) %+replace%
-    ggplot2::theme(
-      axis.title = ggplot2::element_blank(),
-      axis.text = ggplot2::element_blank(),
-      axis.ticks = ggplot2::element_blank(),
-      panel.grid.major = ggplot2::element_blank(),
       panel.grid.minor = ggplot2::element_blank(),
+      panel.grid.major.y = ggplot2::element_line(
+        colour = "#D9D9D9",
+        linewidth = 0.35
+      ),
+
       legend.position = "bottom",
-      legend.title = ggplot2::element_text(
-        family = base_family,
-        face = "bold",
-        size = ggplot2::rel(0.95),
-        colour = wk_black
-      ),
-      legend.text = ggplot2::element_text(
-        family = base_family,
-        size = ggplot2::rel(0.90),
-        colour = wk_base_700
-      ),
-      plot.margin = ggplot2::margin(10, 10, 10, 10)
+      legend.title = ggplot2::element_text(face = "bold"),
+      legend.text = ggplot2::element_text(size = ggplot2::rel(0.9)),
+
+      strip.text = ggplot2::element_text(face = "bold", colour = "#222222"),
+      strip.background = ggplot2::element_rect(fill = "#F3F3F3", colour = NA),
+
+      plot.background = ggplot2::element_rect(fill = "white", colour = NA),
+      panel.background = ggplot2::element_rect(fill = "white", colour = NA)
     )
 }
