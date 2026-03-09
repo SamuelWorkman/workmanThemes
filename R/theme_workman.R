@@ -8,6 +8,14 @@
 #' @param title_family Font family for plot titles.
 #' @param subtitle_family Font family for subtitles.
 #' @param caption_family Font family for captions.
+#' @param title_size Title font size multiplier relative to base_size.
+#' @param subtitle_size Subtitle font size multiplier relative to base_size.
+#' @param caption_size Caption font size multiplier relative to base_size.
+#' @param axis_title_size Axis title font size multiplier relative to base_size.
+#' @param axis_text_size Axis text font size multiplier relative to base_size.
+#' @param legend_title_size Legend title font size multiplier relative to base_size.
+#' @param legend_text_size Legend text font size multiplier relative to base_size.
+#' @param strip_text_size Facet strip text font size multiplier relative to base_size.
 #' @param base_line_size Base line size.
 #' @param base_rect_size Base rectangle line size.
 #'
@@ -18,6 +26,14 @@ theme_workman <- function(
   title_family = "Montserrat",
   subtitle_family = "Open Sans",
   caption_family = "Inconsolata",
+  title_size = 1.6,
+  subtitle_size = 1.15,
+  caption_size = 0.9,
+  axis_title_size = 1.0,
+  axis_text_size = 0.9,
+  legend_title_size = 0.95,
+  legend_text_size = 0.9,
+  strip_text_size = 0.95,
   base_line_size = base_size / 22,
   base_rect_size = base_size / 22
 ) {
@@ -40,6 +56,7 @@ theme_workman <- function(
       ),
       text = ggplot2::element_text(
         family = base_family,
+        size = base_size,
         colour = wk_black
       ),
 
@@ -53,21 +70,21 @@ theme_workman <- function(
       plot.title = ggplot2::element_text(
         family = title_family,
         face = "bold",
-        size = ggplot2::rel(3.0),
+        size = base_size * title_size,
         colour = wk_black,
         hjust = 0,
         margin = ggplot2::margin(b = 8)
       ),
       plot.subtitle = ggplot2::element_text(
         family = subtitle_family,
-        size = ggplot2::rel(2.5),
+        size = base_size * subtitle_size,
         colour = wk_base_700,
         hjust = 0,
         margin = ggplot2::margin(b = 12)
       ),
       plot.caption = ggplot2::element_text(
         family = caption_family,
-        size = ggplot2::rel(1.0),
+        size = base_size * caption_size,
         colour = wk_base_600,
         hjust = 0,
         margin = ggplot2::margin(t = 12)
@@ -75,13 +92,13 @@ theme_workman <- function(
 
       axis.title = ggplot2::element_text(
         family = base_family,
-        size = ggplot2::rel(2.0),
+        size = base_size * axis_title_size,
         face = "bold",
         colour = wk_black
       ),
       axis.text = ggplot2::element_text(
         family = base_family,
-        size = ggplot2::rel(1.5),
+        size = base_size * axis_text_size,
         colour = wk_base_700
       ),
 
@@ -101,11 +118,13 @@ theme_workman <- function(
       legend.key = ggplot2::element_rect(fill = wk_paper, colour = NA),
       legend.title = ggplot2::element_text(
         family = base_family,
+        size = base_size * legend_title_size,
         face = "bold",
         colour = wk_black
       ),
       legend.text = ggplot2::element_text(
         family = base_family,
+        size = base_size * legend_text_size,
         colour = wk_base_700
       ),
 
@@ -115,6 +134,7 @@ theme_workman <- function(
       ),
       strip.text = ggplot2::element_text(
         family = base_family,
+        size = base_size * strip_text_size,
         face = "bold",
         colour = wk_black
       ),
@@ -132,6 +152,11 @@ theme_workman <- function(
 #' @param title_family Font family for plot titles.
 #' @param subtitle_family Font family for subtitles.
 #' @param caption_family Font family for captions.
+#' @param title_size Title font size multiplier relative to base_size.
+#' @param subtitle_size Subtitle font size multiplier relative to base_size.
+#' @param caption_size Caption font size multiplier relative to base_size.
+#' @param legend_title_size Legend title font size multiplier relative to base_size.
+#' @param legend_text_size Legend text font size multiplier relative to base_size.
 #'
 #' @export
 theme_workman_map <- function(
@@ -139,14 +164,24 @@ theme_workman_map <- function(
   base_family = "Alegreya Sans",
   title_family = "Montserrat",
   subtitle_family = "Open Sans",
-  caption_family = "Inconsolata"
+  caption_family = "Inconsolata",
+  title_size = 1.6,
+  subtitle_size = 1.15,
+  caption_size = 0.9,
+  legend_title_size = 0.95,
+  legend_text_size = 0.9
 ) {
   theme_workman(
     base_size = base_size,
     base_family = base_family,
     title_family = title_family,
     subtitle_family = subtitle_family,
-    caption_family = caption_family
+    caption_family = caption_family,
+    title_size = title_size,
+    subtitle_size = subtitle_size,
+    caption_size = caption_size,
+    legend_title_size = legend_title_size,
+    legend_text_size = legend_text_size
   ) %+replace%
     ggplot2::theme(
       axis.title = ggplot2::element_blank(),
@@ -157,13 +192,13 @@ theme_workman_map <- function(
       legend.position = "bottom",
       legend.title = ggplot2::element_text(
         family = base_family,
+        size = base_size * legend_title_size,
         face = "bold",
-        size = ggplot2::rel(0.95),
         colour = wk_black
       ),
       legend.text = ggplot2::element_text(
         family = base_family,
-        size = ggplot2::rel(0.90),
+        size = base_size * legend_text_size,
         colour = wk_base_700
       ),
       plot.margin = ggplot2::margin(10, 10, 10, 10)
