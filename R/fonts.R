@@ -31,6 +31,7 @@ set_workman_defaults <- function(
 ) {
   register_workman_fonts()
   showtext::showtext_auto()
+  showtext::showtext_opts(dpi = 300)
 
   if (isTRUE(map)) {
     ggplot2::theme_set(theme_workman_map(
