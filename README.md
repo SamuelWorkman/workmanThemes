@@ -41,7 +41,6 @@ pak::pak("SamuelWorkman/workmanThemes")
 
 ``` r
 library(ggplot2)
-#> Warning: package 'ggplot2' was built under R version 4.5.2
 library(workmanThemes)
 
 use_workman()
@@ -117,7 +116,6 @@ ggplot(df, aes(year, share)) +
 
 ``` r
 library(sf)
-#> Warning: package 'sf' was built under R version 4.5.2
 #> Linking to GEOS 3.13.1, GDAL 3.11.4, PROJ 9.7.0; sf_use_s2() is TRUE
 
 use_workman(map = TRUE)
