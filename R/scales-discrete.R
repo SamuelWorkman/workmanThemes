@@ -6,7 +6,7 @@
 scale_colour_workman_d <- function(...) {
   ggplot2::discrete_scale(
     aesthetics = "colour",
-    palette = function(n) workman_pal(n),
+    palette = workman_pal,
     name = ggplot2::waiver(),
     ...
   )
@@ -24,7 +24,7 @@ scale_color_workman_d <- scale_colour_workman_d
 scale_fill_workman_d <- function(...) {
   ggplot2::discrete_scale(
     aesthetics = "fill",
-    palette = function(n) workman_pal(n),
+    palette = workman_pal,
     name = ggplot2::waiver(),
     ...
   )

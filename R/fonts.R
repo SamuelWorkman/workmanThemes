@@ -5,21 +5,10 @@
 #' @export
 register_workman_fonts <- function() {
   fams <- sysfonts::font_families()
+  fonts <- c("Montserrat", "Open Sans", "Alegreya Sans", "Inconsolata")
 
-  if (!"Montserrat" %in% fams) {
-    sysfonts::font_add_google("Montserrat", "Montserrat")
-  }
-
-  if (!"Open Sans" %in% fams) {
-    sysfonts::font_add_google("Open Sans", "Open Sans")
-  }
-
-  if (!"Alegreya Sans" %in% fams) {
-    sysfonts::font_add_google("Alegreya Sans", "Alegreya Sans")
-  }
-
-  if (!"Inconsolata" %in% fams) {
-    sysfonts::font_add_google("Inconsolata", "Inconsolata")
+  for (f in fonts) {
+    if (!f %in% fams) sysfonts::font_add_google(f, f)
   }
 
   invisible(TRUE)
