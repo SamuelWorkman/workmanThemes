@@ -18,6 +18,8 @@
 #' @param strip_text_size Facet strip text font size multiplier relative to base_size.
 #' @param base_line_size Base line size.
 #' @param base_rect_size Base rectangle line size.
+#' @param white_bg Logical; if TRUE, use a pure white background instead of the
+#'   default warm paper colour. Useful for journal submissions.
 #'
 #' @export
 theme_workman <- function(
@@ -35,8 +37,11 @@ theme_workman <- function(
   legend_text_size = 1.5,
   strip_text_size = 1.0,
   base_line_size = base_size / 22,
-  base_rect_size = base_size / 22
+  base_rect_size = base_size / 22,
+  white_bg = FALSE
 ) {
+  bg <- if (isTRUE(white_bg)) "#FFFFFF" else wk_paper
+
   ggplot2::theme_minimal(
     base_size = base_size,
     base_family = base_family,
@@ -50,7 +55,7 @@ theme_workman <- function(
         lineend = "butt"
       ),
       rect = ggplot2::element_rect(
-        fill = wk_paper,
+        fill = bg,
         colour = NA,
         linewidth = base_rect_size
       ),
@@ -60,8 +65,8 @@ theme_workman <- function(
         colour = wk_black
       ),
 
-      plot.background = ggplot2::element_rect(fill = wk_paper, colour = NA),
-      panel.background = ggplot2::element_rect(fill = wk_paper, colour = NA),
+      plot.background = ggplot2::element_rect(fill = bg, colour = NA),
+      panel.background = ggplot2::element_rect(fill = bg, colour = NA),
       panel.border = ggplot2::element_blank(),
 
       plot.title.position = "plot",
@@ -114,8 +119,8 @@ theme_workman <- function(
 
       legend.position = "bottom",
       legend.direction = "horizontal",
-      legend.background = ggplot2::element_rect(fill = wk_paper, colour = NA),
-      legend.key = ggplot2::element_rect(fill = wk_paper, colour = NA),
+      legend.background = ggplot2::element_rect(fill = bg, colour = NA),
+      legend.key = ggplot2::element_rect(fill = bg, colour = NA),
       legend.title = ggplot2::element_text(
         family = base_family,
         size = base_size * legend_title_size,
@@ -157,6 +162,8 @@ theme_workman <- function(
 #' @param caption_size Caption font size multiplier relative to base_size.
 #' @param legend_title_size Legend title font size multiplier relative to base_size.
 #' @param legend_text_size Legend text font size multiplier relative to base_size.
+#' @param white_bg Logical; if TRUE, use a pure white background. Useful for
+#'   journal submissions.
 #'
 #' @export
 theme_workman_map <- function(
@@ -169,9 +176,10 @@ theme_workman_map <- function(
   subtitle_size = 2.0,
   caption_size = 0.9,
   legend_title_size = 1.8,
-  legend_text_size = 1.5
+  legend_text_size = 1.5,
+  white_bg = FALSE
 ) {
-theme_workman(
+  theme_workman(
     base_size = base_size,
     base_family = base_family,
     title_family = title_family,
@@ -181,7 +189,8 @@ theme_workman(
     subtitle_size = subtitle_size,
     caption_size = caption_size,
     legend_title_size = legend_title_size,
-    legend_text_size = legend_text_size
+    legend_text_size = legend_text_size,
+    white_bg = white_bg
   ) %+replace%
     ggplot2::theme(
       axis.title = ggplot2::element_blank(),

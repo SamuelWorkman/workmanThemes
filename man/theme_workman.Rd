@@ -19,7 +19,8 @@ theme_workman(
   legend_text_size = 1.5,
   strip_text_size = 1,
   base_line_size = base_size/22,
-  base_rect_size = base_size/22
+  base_rect_size = base_size/22,
+  white_bg = FALSE
 )
 }
 \arguments{
@@ -52,6 +53,9 @@ theme_workman(
 \item{base_line_size}{Base line size.}
 
 \item{base_rect_size}{Base rectangle line size.}
+
+\item{white_bg}{Logical; if TRUE, use a pure white background instead of the
+default warm paper colour. Useful for journal submissions.}
 }
 \description{
 Clean publication theme with separate fonts for title, subtitle,

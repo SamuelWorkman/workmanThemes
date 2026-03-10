@@ -12,13 +12,13 @@ Google font helpers, map themes, and label utilities.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/YOUR_GITHUB_USERNAME/workmanThemes}
-  \item Report bugs at \url{https://github.com/YOUR_GITHUB_USERNAME/workmanThemes/issues}
+  \item \url{https://github.com/SamuelWorkman/workmanThemes}
+  \item Report bugs at \url{https://github.com/SamuelWorkman/workmanThemes/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Samuel Workman \email{YOUR_EMAIL@example.com}
+\strong{Maintainer}: Samuel Workman \email{sam.workman@mail.wvu.edu}
 
 }
 \keyword{internal}

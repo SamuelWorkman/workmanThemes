@@ -20,16 +20,28 @@ register_workman_fonts <- function() {
 #'
 #' @param base_size Base font size.
 #' @param map Logical; if TRUE, set the map theme as the session default.
+#' @param white_bg Logical; if TRUE, use a pure white background. Useful for
+#'   journal submissions.
 #'
 #' @export
-set_workman_defaults <- function(base_size = 12, map = FALSE) {
+set_workman_defaults <- function(
+  base_size = 12,
+  map = FALSE,
+  white_bg = FALSE
+) {
   register_workman_fonts()
   showtext::showtext_auto()
 
   if (isTRUE(map)) {
-    ggplot2::theme_set(theme_workman_map(base_size = base_size))
+    ggplot2::theme_set(theme_workman_map(
+      base_size = base_size,
+      white_bg = white_bg
+    ))
   } else {
-    ggplot2::theme_set(theme_workman(base_size = base_size))
+    ggplot2::theme_set(theme_workman(
+      base_size = base_size,
+      white_bg = white_bg
+    ))
   }
 
   invisible(TRUE)

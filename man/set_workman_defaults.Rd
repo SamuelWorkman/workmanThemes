@@ -4,12 +4,15 @@
 \alias{set_workman_defaults}
 \title{Set workmanThemes plotting defaults}
 \usage{
-set_workman_defaults(base_size = 12, map = FALSE)
+set_workman_defaults(base_size = 12, map = FALSE, white_bg = FALSE)
 }
 \arguments{
 \item{base_size}{Base font size.}
 
 \item{map}{Logical; if TRUE, set the map theme as the session default.}
+
+\item{white_bg}{Logical; if TRUE, use a pure white background. Useful for
+journal submissions.}
 }
 \description{
 Registers fonts, enables showtext, and sets the default ggplot2 theme.

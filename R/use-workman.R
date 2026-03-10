@@ -6,10 +6,17 @@
 #' @param base_size Base font size.
 #' @param map Logical; if TRUE, use the map theme by default.
 #' @param style_geoms Logical; if TRUE, update defaults for some common geoms.
+#' @param white_bg Logical; if TRUE, use a pure white background instead of the
+#'   default warm paper colour. Useful for journal submissions.
 #'
 #' @export
-use_workman <- function(base_size = 12, map = FALSE, style_geoms = FALSE) {
-  set_workman_defaults(base_size = base_size, map = map)
+use_workman <- function(
+  base_size = 12,
+  map = FALSE,
+  style_geoms = FALSE,
+  white_bg = FALSE
+) {
+  set_workman_defaults(base_size = base_size, map = map, white_bg = white_bg)
 
   if (isTRUE(style_geoms)) {
     ggplot2::update_geom_defaults("point", list(size = 2.5, alpha = 0.9))

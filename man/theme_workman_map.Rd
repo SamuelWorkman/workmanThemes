@@ -14,7 +14,8 @@ theme_workman_map(
   subtitle_size = 2,
   caption_size = 0.9,
   legend_title_size = 1.8,
-  legend_text_size = 1.5
+  legend_text_size = 1.5,
+  white_bg = FALSE
 )
 }
 \arguments{
@@ -37,6 +38,9 @@ theme_workman_map(
 \item{legend_title_size}{Legend title font size multiplier relative to base_size.}
 
 \item{legend_text_size}{Legend text font size multiplier relative to base_size.}
+
+\item{white_bg}{Logical; if TRUE, use a pure white background. Useful for
+journal submissions.}
 }
 \description{
 Variant of the workman theme tuned for choropleths and spatial graphics.

@@ -4,7 +4,7 @@
 \alias{use_workman}
 \title{Activate workmanThemes defaults for a plotting session}
 \usage{
-use_workman(base_size = 12, map = FALSE, style_geoms = FALSE)
+use_workman(base_size = 12, map = FALSE, style_geoms = FALSE, white_bg = FALSE)
 }
 \arguments{
 \item{base_size}{Base font size.}
@@ -12,6 +12,9 @@ use_workman(base_size = 12, map = FALSE, style_geoms = FALSE)
 \item{map}{Logical; if TRUE, use the map theme by default.}
 
 \item{style_geoms}{Logical; if TRUE, update defaults for some common geoms.}
+
+\item{white_bg}{Logical; if TRUE, use a pure white background instead of the
+default warm paper colour. Useful for journal submissions.}
 }
 \description{
 Registers fonts, enables showtext, and sets the default ggplot theme.
