@@ -10,11 +10,11 @@ theme_workman_map(
   title_family = "Montserrat",
   subtitle_family = "Open Sans",
   caption_family = "Inconsolata",
-  title_size = 3,
-  subtitle_size = 2,
-  caption_size = 0.9,
-  legend_title_size = 1.8,
-  legend_text_size = 1.5,
+  title_size = 1.6,
+  subtitle_size = 1.2,
+  caption_size = 0.8,
+  legend_title_size = 1,
+  legend_text_size = 0.85,
   white_bg = FALSE
 )
 }
